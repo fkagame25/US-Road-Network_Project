@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SSYSGw>
+	<NotifierThreads>50</NotifierThreads>
+	<ReplyBuilderThreads>100</ReplyBuilderThreads>
+	<ViewAR>N</ViewAR>
+	<Lang>ENG</Lang>
+	<HBBidirectional>20</HBBidirectional>
+	<LogonCheckPwdExpiration>N</LogonCheckPwdExpiration>
+	<EnableDevTrace>Y</EnableDevTrace>
+	<EnableDetailsTrace>Y</EnableDetailsTrace>
+	<Connections>
+		<Connection.http>
+			<ConnectionId rsc="DEPO">conn.gxv.http</ConnectionId>
+			<ReconnectPeriod>10</ReconnectPeriod>
+			<LogonTimeout>100</LogonTimeout>
+			<RequestTimeout>30</RequestTimeout>
+			<HBTimeout>15</HBTimeout>
+			<Type>gxv.http</Type>
+										  
+										
+														  
+			<URL>http://172.24.5.25:5080/SSYSGw/gw</URL>
+			<User>BNRWRWRAGW01</User>
+			<Password encrypted="N">1</Password>
+			<!-- 
+			     <Password encrypted="Y">MIAGCSqGSIb3DQEHA6CAMIACAQAxggGLMIIBhwIBADBvMFgxFTATBgoJkiaJk/IsZAEZFgVsb2NhbDETMBEGCgmSJomT8ixkARkWA2JucjEVMBMGCgmSJomT8ixkARkWBXJpcHBzMRMwEQYDVQQDEwpCTlJSSVBQU0NBAhM5AAAAMOLq6sa3MHcUAAAAAAAwMA0GCSqGSIb3DQEBAQUABIIBAJhoHWmChXQ+X1SdYkYQqSKGivr4Dkz9O5v5LaGSv7uno98LsrrlnZuoEyUN6LVOBS7Sq8d6YIqwvo446hVcuVb0ax4op7fl9/DfZgqe+ayTN2IqCPavJJ8sxSPZsfRRS6TnK3KgBOBsrLGW7qUKdX22IwJXMnGtu8whQIwy9rbLOOgENGkeVP8rkqFqnkCU6H50IzXdmOQDjcVym6HHAvw9rFCLIw05oscKl4bS/8AyTTwKYRE7XJNb//akXad42o6tUvksVtXuaayjFcXjpAgMsiIgh0Ft/iVFlAaX2PxUefY2ul/7x/sYCFxA79THg2WEPlpchE1BwLmOWrN09hkwgAYJKoZIhvcNAQcBMB0GCWCGSAFlAwQBAgQQRjamk+aYM9bZtjUWy9v1CqCABBCVrKrfk0KxinAScPeh5V0eAAAAAAAAAAAAAA==</Password> 
+-->
+		</Connection.http>
+		<!--Connection.oracle>
+                        <ConnectionId>conn.gxv.oracle</ConnectionId>
+                        <RequestDelayMS>1000</RequestDelayMS>
+                        <PoolSize>1</PoolSize>
+                        <Type>gxv.oracle</Type>
+                        <Host>localhost</Host>
+                        <Port>1521</Port>
+                        <SID>SSYS</SID>
+                        <User>DEPO</User>
+                        <Password>****</Password>
+                </Connection.oracle-->
+	</Connections>
+	<Crypto>
+		<Provider>BC</Provider>
+                <Algorithm>SHA256withRSA</Algorithm>
+                <Trusted>
+                        <KeyStoreType>BKS</KeyStoreType>
+                        <KeyStorePath>../conf/cert/DEPOPROD.bks</KeyStorePath>
+                        <KeyStorePassword>123456</KeyStorePassword>
+                </Trusted>
+                <Private>
+                        <KeyStoreType>BKS</KeyStoreType>
+                        <KeyStorePath>../conf/cert/DEPOPROD.bks</KeyStorePath>
+                        <KeyStorePassword>123456</KeyStorePassword>
+                        <Alias>depoxcert</Alias>
+                        <KeyPassword>123456</KeyPassword>
+                </Private>
+                <LDAP>
+                        <Server>172.24.7.22</Server>
+                        <Port>389</Port>
+                        <BaseDN>DC=ripps,DC=bnr,DC=local</BaseDN>
+                        <!--BindDN>CN=ldap_browser,DC=ripps,DC=bnr,DC=local</BindDN-->
+                        <BindDN>ldap_browser@ripps.bnr.local</BindDN>
+                        <BindPassword encrypted="N">1qaz!QAZ</BindPassword>
+			<UpdateTimeout>60000</UpdateTimeout>
+               </LDAP>
+        </Crypto>
+        <!--Crypto>
+                <Provider>BC</Provider>
+                <Algorithm>SHA256withRSA</Algorithm>
+                <Trusted>
+                        <KeyStoreType>BKS</KeyStoreType>
+                        <KeyStorePath>/cma/depox/gateway/conf/SYSCERTS.bks</KeyStorePath>
+                        <KeyStorePassword>*</KeyStorePassword>
+                </Trusted>
+                <Private>
+                        <KeyStoreType>BKS</KeyStoreType>
+                        <KeyStorePath>/cma/depox/gateway/conf/SYSCERTS.bks</KeyStorePath>
+                        <KeyStorePassword>1qaz!QAZ</KeyStorePassword>
+                        <Alias>depoxcert</Alias>
+                        <KeyPassword>*</KeyPassword>
+                </Private>
+                <LDAP>
+                        <Server>jordan-gw</Server>
+                        <Port>6389</Port>
+                        <BaseDN>cn=cbj-pki</BaseDN>
+                        <BindDN/>
+                        <BindPassword/>
+			<UpdateTimeout>60000</UpdateTimeout>
+                </LDAP>
+    	</Crypto-->
+<SystemDictionaries>
+		<ConnectionId>conn.gxv.http</ConnectionId>
+	</SystemDictionaries>
+	<ConnectionData>
+		<ConnectionId>conn.gxv.http</ConnectionId>
+				<Views requestOwnership="Y">
+			<View>
+				<Type>FV_POS_ACC_TYPE</Type>
+				<Name>FV_POS_ACC_TYPE</Name>
+				<ReqType>FV_POS_ACC_TYPE</ReqType>
+			</View>
+			<View>
+				<Type>FV_IDDOC_TYPE</Type>
+				<Name>FV_IDDOC_TYPE</Name>
+				<ReqType>FV_IDDOC_TYPE</ReqType>
+			</View>
+			<View>
+				<Type>FV_A_SERVICER</Type>
+				<Name>FV_A_SERVICER</Name>
+				<ReqType>FV_A_SERVICER</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>TypeCode='DEPO'</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>TypeCode='DEPO'</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>TypeCode='DEPO'</FilterByCondition>
+				<!--FilterByCondition ownership='HIERARCHY'>Partic=V_PARTIC OR TypeCode!='BANK' OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition-->
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+				<Index name="idxFV_A_SERVICER">Code;Partic</Index>
+			</View>
+			<View>
+				<Type>FV_D_PARAMS</Type>
+				<Name>DParams</Name>
+				<ReqType>FV_D_PARAMS</ReqType>
+			</View>
+			<View>
+				<Type>FV_CDICT</Type>
+				<Name>FV_CDICT</Name>
+				<ReqType>FV_CDICT</ReqType>
+			</View>
+			<View>
+				<Type>DEPO</Type>
+				<Name>DEPO</Name>
+				<ReqType>DEPO</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_PARTIC</Type>
+				<Name>FV_PARTIC</Name>
+				<ReqType>FV_PARTIC</ReqType>
+				<Index name="idxFV_PARTIC_CODE">Code</Index>
+				<Index name="idxFV_PARTIC_TYPE">Code;Type</Index>
+				<Index name="idxFV_PARTIC_INST_TYPE">Code;InstType</Index>
+			</View>
+
+			<View>
+				<Type>FV_INST_TYPE</Type>
+				<Name>FV_INST_TYPE</Name>
+				<ReqType>FV_INST_TYPE</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_PARTIC_TYPE</Type>
+				<Name>FV_PARTIC_TYPE</Name>
+				<ReqType>FV_PARTIC_TYPE</ReqType>
+			</View>
+			
+			<View>
+				<Type>FV_REPO_TYPE</Type>
+				<Name>FV_REPO_TYPE</Name>
+				<ReqType>FV_REPO_TYPE</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_SACC_TYPE</Type>
+				<Name>FV_SACC_TYPE</Name>
+				<ReqType>FV_SACC_TYPE</ReqType>
+			</View>
+
+		<View>
+		<Type>FV_USER</Type>
+				<Name>FV_USER</Name>
+				<ReqType>FV_USER</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Partic=V_PARTIC OR Code='BNRWRWRWALMS'</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Partic=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+				<Index name="idxFV_USER_Partic">Code;Partic</Index>
+			</View>
+
+			<View>
+				<Type>FV_DRESULT</Type>
+				<Name>FV_DRESULT</Name>
+				<ReqType>FV_DRESULT</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_OPERDAY</Type>
+				<Name>FV_OPERDAY</Name>
+				<ReqType>FV_OPERDAY</ReqType>
+			</View>
+			<View>
+				<Type>FV_SPECIAL_DAY</Type>
+				<Name>FV_SPECIAL_DAY</Name>
+				<ReqType>FV_SPECIAL_DAY</ReqType>
+			</View>
+			<View>
+				<Type>FV_SYSTEM_ACTION_TYPE</Type>
+				<Name>FV_SYSTEM_ACTION_TYPE</Name>
+				<ReqType>FV_SYSTEM_ACTION_TYPE</ReqType>
+			</View>
+			<View>
+				<Type>FV_SYSTEM_STATE_ACTION</Type>
+				<Name>FV_SYSTEM_STATE_ACTION</Name>
+				<ReqType>FV_SYSTEM_STATE_ACTION</ReqType>
+			</View>
+			<View>
+				<Type>FV_SYSTEM_STATE</Type>
+				<Name>FV_SYSTEM_STATE</Name>
+				<ReqType>FV_SYSTEM_STATE</ReqType>
+			</View>
+			<View>
+				<Type>FV_TEMPLATE_STATE</Type>
+				<Name>FV_TEMPLATE_STATE</Name>
+				<ReqType>FV_TEMPLATE_STATE</ReqType>
+			</View>
+			<View>
+				<Type>FV_TEMPLATE</Type>
+				<Name>FV_TEMPLATE</Name>
+				<ReqType>FV_TEMPLATE</ReqType>
+			</View>
+			<View>
+				<Type>FV_WEEK</Type>
+				<Name>FV_WEEK</Name>
+				<ReqType>FV_WEEK</ReqType>
+			</View>
+			<View>
+				<Type>FV_OPERDAY_STATE_ACTION</Type>
+				<Name>FV_OPERDAY_STATE_ACTION</Name>
+				<ReqType>FV_OPERDAY_STATE_ACTION</ReqType>
+			</View>
+			<View>
+				<Type>FV_OPERDAY_STATE</Type>
+				<Name>FV_OPERDAY_STATE</Name>
+				<ReqType>FV_OPERDAY_STATE</ReqType>
+			</View>
+			<View>
+				<Type>FV_OPERDAY_HISTORY</Type>
+				<Name>FV_OPERDAY_HISTORY</Name>
+				<ReqType>FV_OPERDAY_HISTORY</ReqType>
+			</View>
+			<View>
+				<Type>FV_BD_FUTURE_VDATE</Type>
+				<Name>FV_BD_FUTURE_VDATE</Name>
+				<ReqType>FV_BD_FUTURE_VDATE</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_SACC</Type>
+				<Name>FV_SACC</Name>
+				<ReqType>FV_SACC</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<!--FilterByCondition ownership='OWN'>Partic=V_PARTIC AND Type='DEPO'</FilterByCondition-->
+				<FilterByCondition ownership='OWN'>Partic=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA',Code,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>ServicerPartic=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>(Partic=V_PARTIC OR exists('idxFV_SSA',Code,V_PARTIC) OR ServicerPartic=V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+				<ExtFields idx='idxFV_PARTIC_CODE' on='Partic' as='P'>ShortName</ExtFields>
+				<Index name="idxFV_SACC">Code;Partic</Index>
+				<Index name="idxFV_SACC_Servicer">ID;ServicerPartic</Index>
+			</View>
+
+			<View>
+				<Type>FV_EXT_ACCS</Type>
+				<Name>FV_EXT_ACCS</Name>
+				<ReqType>FV_EXT_ACCS</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>ParticCode=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Id',AccId,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SACC_Servicer',AccId,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>ParticCode=V_PARTIC OR exists('idxFV_SSA_Id',AccId,V_PARTIC) OR exists('idxFV_SACC_Servicer',AccId,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_SSA</Type>
+				<Name>FV_SSA</Name>
+				<ReqType>FV_SSA</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Partic=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',Partic,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Partic=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',Partic,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+				<ExtFields idx='idxFV_PARTIC_CODE' on='SAccOwner' as='P'>ShortName</ExtFields>
+				<Index name="idxFV_SSA_Id">_SAccId;Partic</Index>
+				<Index name="idxFV_SSA">SAcc;Partic</Index>
+				<Index name="idxFV_SSA_Partic_SAccOwner">Partic;SAccOwner;Servicer</Index>
+			</View>
+
+			<View>
+				<Type>FV_SBTYPE</Type>
+				<Name>FV_SBTYPE</Name>
+				<ReqType>FV_SBTYPE</ReqType>
+			</View>
+		<View>
+       	 <Type>FV_ESB</Type>
+       	 	<Name>FV_ESB</Name>
+      	 	 <ReqType>FV_ESB</ReqType>
+      	 	 <FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+      	  <FilterByCondition ownership='OWN'>Partic=V_PARTIC OR exists('idxFV_SACC',SAcc,V_PARTIC)</FilterByCondition>
+      	  <FilterByCondition ownership='MANAGED'>exists('idxFV_SSA',SAcc,V_PARTIC)</FilterByCondition>
+      	  <FilterByCondition ownership='SERVICED'>exists('idxFV_SSA',SAcc,V_PARTIC) OR (V_PARTIC='CMACRWRW' AND SAccType='TRAD')</FilterByCondition>
+      	  <FilterByCondition ownership='HIERARCHY'>Partic=V_PARTIC OR exists('idxFV_SACC',SAcc,V_PARTIC) OR exists('idxFV_SSA',SAcc,V_PARTIC)</FilterByCondition>
+      	  <FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+		</View>
+
+			<View>
+				<Type>FV_ESB_PANEL</Type>
+				<Name>FV_ESB_PANEL</Name>
+				<ReqType>FV_ESB_PANEL</ReqType>
+      	 	 		<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+      	 			<FilterByCondition ownership='OWN'>Partic=V_PARTIC OR exists('idxFV_SACC',SAcc,V_PARTIC)</FilterByCondition>
+      	  			<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA',SAcc,V_PARTIC)</FilterByCondition>
+      	  			<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA',SAcc,V_PARTIC) OR (V_PARTIC='CMACRWRW' AND SAccType='TRAD')</FilterByCondition>
+      	  			<FilterByCondition ownership='HIERARCHY'>Partic=V_PARTIC OR exists('idxFV_SACC',SAcc,V_PARTIC) OR exists('idxFV_SSA',SAcc,V_PARTIC)</FilterByCondition>
+      	  			<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+				<!--ExtFields idx='idxFV_SSA' on='SAcc' as='SSA'>Partic</ExtFields-->
+			</View>
+
+			<View>
+				<Type>FV_CL_POSITION</Type>
+				<Name>FV_CL_POSITION</Name>
+				<ReqType>FV_CL_POSITION</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Partic=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA',SAcc,V_PARTIC) OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Partic=V_PARTIC OR exists('idxFV_SSA',SAcc,V_PARTIC) OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_CO_PARTIC_COLL_PROFILE</Type>
+				<Name>FV_CO_PARTIC_COLL_PROFILE</Name>
+				<ReqType>FV_CO_PARTIC_COLL_PROFILE</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Sender=V_PARTIC OR ParticCode=V_PARTIC OR CounterPartyCode=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,ParticCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,CounterPartyCode,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,ParticCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,CounterPartyCode,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>V_PARTIC OR ParticCode=V_PARTIC OR CounterPartyCode=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,ParticCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,CounterPartyCode,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+				<Index name="idxFV_CO_PARTIC_COLL_PROFILE_ID">ID</Index>
+			</View>
+
+			<View>
+				<Type>FV_CO_PARTIC_ELIG_CRITERIA</Type>
+				<Name>FV_CO_PARTIC_ELIG_CRITERIA</Name>
+				<ReqType>FV_CO_PARTIC_ELIG_CRITERIA</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>getField('idxFV_CO_PARTIC_COLL_PROFILE_ID',ParticCollProfileId,'Sender')=V_PARTIC OR getField('idxFV_CO_PARTIC_COLL_PROFILE_ID',ParticCollProfileId,'ParticCode')=V_PARTIC OR getField('idxFV_CO_PARTIC_COLL_PROFILE_ID',ParticCollProfileId,'CounterPartyCode')=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_D_PRIORITY_GROUP</Type>
+				<Name>FV_D_PRIORITY_GROUP</Name>
+				<ReqType>FV_D_PRIORITY_GROUP</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_D_PRIORITY</Type>
+				<Name>FV_D_PRIORITY</Name>
+				<ReqType>FV_D_PRIORITY</ReqType>
+			</View>
+
+
+			<View>
+				<Type>FV_DOC_QUERY</Type>
+				<Name>FV_DOC_QUERY</Name>
+				<ReqType>FV_DOC_QUERY</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Partic=V_PARTIC OR RefPartic=V_PARTIC OR exists('idxFV_SACC',RefAcc,V_PARTIC) OR (OID != "" AND (exists('idxFV_DS_Sender',OID,V_PARTIC) OR exists('idxFV_DS_Deag',OID,V_PARTIC) OR exists('idxFV_DS_Reag',OID,V_PARTIC)))</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,RefPartic,'DEPO') OR exists('idxFV_SSA',RefAcc,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,RefPartic,'DEPO') OR exists('idxFV_SSA',RefAcc,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Partic=V_PARTIC OR RefPartic=V_PARTIC OR exists('idxFV_SACC',RefAcc,V_PARTIC) OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,RefPartic,'DEPO') OR exists('idxFV_SSA',RefAcc,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_DOC_SUSPENSION</Type>
+				<Name>FV_DOC_SUSPENSION</Name>
+				<ReqType>FV_DOC_SUSPENSION</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<!--FilterByCondition ownership='OWN'>ParticCode=V_PARTIC OR exists('idxFV_PARTIC_TYPE',V_PARTIC,ParticTypeCode) OR exists('idxFV_PARTIC_INST_TYPE',V_PARTIC,InstTypeCode)</FilterByCondition-->
+				<FilterByCondition ownership='OWN'>ParticCode='' OR ParticCode=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,ParticCode,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,ParticCode,'DEPO')</FilterByCondition>
+				<!--FilterByCondition ownership='HIERARCHY'>ParticCode=V_PARTIC OR exists('idxFV_PARTIC_TYPE',V_PARTIC,ParticTypeCode) OR exists('idxFV_PARTIC_INST_TYPE',V_PARTIC,InstTypeCode) OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,ParticCode,'DEPO')</FilterByCondition-->
+				<FilterByCondition ownership='HIERARCHY'>ParticCode='' OR ParticCode=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,ParticCode,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_DOC_SECURITIES</Type>
+				<Name>FV_DOC_SECURITIES</Name>
+				<ReqType>FV_DOC_SECURITIES</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Partic=V_PARTIC OR DeagCode=V_PARTIC OR ReagCode=V_PARTIC OR SellCode=V_PARTIC OR BuyrCode=V_PARTIC OR exists('idxFV_SACC',DeagAcc,V_PARTIC) OR exists('idxFV_SACC',ReagAcc,V_PARTIC) OR exists('idxFV_SACC',SellAcc,V_PARTIC) OR exists('idxFV_SACC',BuyrAcc,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA',DeagAcc,V_PARTIC) OR exists('idxFV_SSA',ReagAcc,V_PARTIC) OR exists('idxFV_SSA',SellAcc,V_PARTIC) OR exists('idxFV_SSA',BuyrAcc,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>V_PARTIC='CMACRWRW' AND ExtBoard='CMAC'</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+				<Index name="idxFV_DS_Sender">OID;Partic</Index>
+				<Index name="idxFV_DS_Deag">OID;DeagCode</Index>
+				<Index name="idxFV_DS_Reag">OID;ReagCode</Index>
+			</View>
+
+			<View>
+				<Type>FV_DOC_TRADE</Type>
+				<Name>FV_DOC_TRADE</Name>
+				<ReqType>FV_DOC_TRADE</ReqType>
+				<ExtFields idx='idxFV_DS_Deag' on='OID,Deag' as='DT'>ExtBoard</ExtFields>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Partic=V_PARTIC OR Deag=V_PARTIC OR Reag=V_PARTIC OR exists('idxFV_SACC',ISellAcc,V_PARTIC) OR exists('idxFV_SACC',IBuyAcc,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA',ISellAcc,V_PARTIC) OR exists('idxFV_SSA',IBuyAcc,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>V_PARTIC='CMACRWRW' AND DT__ExtBoard='CMAC'</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+
+			<View>
+				<Type>FV_ETRANS</Type>
+				<Name>FV_ETRANS</Name>
+				<ReqType>FV_ETRANS</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_EVENT</Type>
+				<Name>FV_EVENT</Name>
+				<ReqType>FV_EVENT</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>RefPartic=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,RefPartic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>RefPartic=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,RefPartic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+
+			<View>
+				<Type>FV_CFICAT</Type>
+				<Name>FV_CFICAT</Name>
+				<ReqType>FV_CFICAT</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_CFIGR</Type>
+				<Name>FV_CFIGR</Name>
+				<ReqType>FV_CFIGR</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_CFIGRATR</Type>
+				<Name>FV_CFIGRATR</Name>
+				<ReqType>FV_CFIGRATR</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_CURS</Type>
+				<Name>FV_CURS</Name>
+				<ReqType>FV_CURS</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_FEE_FIXED</Type>
+				<Name>FV_FEE_FIXED</Name>
+				<ReqType>FV_FEE_FIXED</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Participant=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Participant,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Participant=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Participant,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_FEE_OPERATION</Type>
+				<Name>FV_FEE_OPERATION</Name>
+				<ReqType>FV_FEE_OPERATION</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Participant=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Participant,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Participant=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Participant,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_ICUR</Type>
+				<Name>FV_ICUR</Name>
+				<ReqType>FV_ICUR</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_RTYPES</Type>
+				<Name>FV_RTYPES</Name>
+				<ReqType>FV_RTYPES</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_TERMS</Type>
+				<Name>FV_TERMS</Name>
+				<ReqType>FV_TERMS</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_CB</Type>
+				<Name>FV_CB</Name>
+				<ReqType>FV_CB</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_MARKETS</Type>
+				<Name>FV_MARKETS</Name>
+				<ReqType>FV_MARKETS</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_PFREQ</Type>
+				<Name>FV_PFREQ</Name>
+				<ReqType>FV_PFREQ</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_ST</Type>
+				<Name>FV_ST</Name>
+				<ReqType>FV_ST</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_IDEBT</Type>
+				<Name>FV_IDEBT</Name>
+				<ReqType>FV_IDEBT</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_AUCTION</Type>
+				<Name>FV_AUCTION</Name>
+				<ReqType>FV_AUCTION</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_AUCTION_COLL_PUBLIC</Type>
+				<Name>FV_AUCTION_COLL_PUBLIC</Name>
+				<ReqType>FV_AUCTION_COLL_PUBLIC</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_BOARD_POS_ACC_TYPE</Type>
+				<Name>FV_BOARD_POS_ACC_TYPE</Name>
+				<ReqType>FV_BOARD_POS_ACC_TYPE</ReqType>
+			</View>
+			
+			<View>
+				<Type>FV_GUARANTOR</Type>
+				<Name>FV_GUARANTOR</Name>
+				<ReqType>FV_GUARANTOR</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_IORG</Type>
+				<Name>FV_IORG</Name>
+				<ReqType>FV_IORG</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_ISSUER</Type>
+				<Name>FV_ISSUER</Name>
+				<ReqType>FV_ISSUER</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>PCode=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,PCode,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>PCode=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,PCode,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_REGISTRAR</Type>
+				<Name>FV_REGISTRAR</Name>
+				<ReqType>FV_REGISTRAR</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_SCDEPO</Type>
+				<Name>FV_SCDEPO</Name>
+				<ReqType>FV_SCDEPO</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_UNDERWRITER</Type>
+				<Name>FV_UNDERWRITER</Name>
+				<ReqType>FV_UNDERWRITER</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_AUCTION_PROFILE</Type>
+				<Name>FV_AUCTION_PROFILE</Name>
+				<ReqType>FV_AUCTION_PROFILE</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_IQMETHOD</Type>
+				<Name>FV_IQMETHOD</Name>
+				<ReqType>FV_IQMETHOD</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_MHP</Type>
+				<Name>FV_MHP</Name>
+				<ReqType>FV_MHP</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Partic=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Partic=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_MHP_DETAIL</Type>
+				<Name>FV_MHP_DETAIL</Name>
+				<ReqType>FV_MHP_DETAIL</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Partic=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Partic=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_MSBOARD</Type>
+				<Name>FV_MSBOARD</Name>
+				<ReqType>FV_MSBOARD</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_POS_ACCOUNT</Type>
+				<Name>FV_POS_ACCOUNT</Name>
+				<ReqType>FV_POS_ACCOUNT</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_PORTFOLIO</Type>
+				<Name>FV_PORTFOLIO</Name>
+				<ReqType>FV_PORTFOLIO</ReqType>
+			</View>
+
+			<View>
+			<Type>FV_P_CITY</Type>
+			<Name>FV_P_CITY</Name>
+			<ReqType>FV_P_CITY</ReqType>
+			</View>
+
+			<View>
+			<Type>FV_P_COUNTRIES</Type>
+			<Name>FV_P_COUNTRIES</Name>
+			<ReqType>FV_P_COUNTRIES</ReqType>
+			</View>
+		
+		
+			<View>
+				<Type>FV_SO_MESSAGE</Type>
+				<Name>FV_SO_MESSAGE</Name>
+				<ReqType>FV_SO_MESSAGE</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>MsgReceiver=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,MsgReceiver,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,MsgReceiver,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>MsgReceiver=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,MsgReceiver,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_SI_MESSAGE</Type>
+				<Name>FV_SI_MESSAGE</Name>
+				<ReqType>FV_SI_MESSAGE</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Partic=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Partic=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_IALL</Type>
+				<Name>FV_IALL</Name>
+				<ReqType>FV_IALL</ReqType>
+				<Index name="idxFV_IALL_ISSUER">Cd;ISCd</Index> 
+			</View>
+
+			<View>
+				<Type>FV_AUCTION_PARTICIPANTS</Type>
+				<Name>FV_AUCTION_PARTICIPANTS</Name>
+				<ReqType>FV_AUCTION_PARTICIPANTS</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_BOARD_SECURITIES</Type>
+				<Name>FV_BOARD_SECURITIES</Name>
+				<ReqType>FV_BOARD_SECURITIES</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_ICPS</Type>
+				<Name>FV_ICPS</Name>
+				<ReqType>FV_ICPS</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_ITD</Type>
+				<Name>FV_ITD</Name>
+				<ReqType>FV_ITD</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_IEQTY</Type>
+				<Name>FV_IEQTY</Name>
+				<ReqType>FV_IEQTY</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_IGENERIC</Type>
+				<Name>FV_IGENERIC</Name>
+				<ReqType>FV_IGENERIC</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_IPEVT</Type>
+				<Name>FV_IPEVT</Name>
+				<ReqType>FV_IPEVT</ReqType>
+				<Index name="idxFV_IPEVT_ID">ID</Index>
+			</View>
+
+			<View>
+				<Type>FV_IEVENT_INFO</Type>
+				<Name>FV_IEVENT_INFO</Name>
+				<ReqType>FV_IEVENT_INFO</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<!--FilterByCondition ownership='OWN'>TRUE</FilterByCondition-->
+				<FilterByCondition ownership='OWN'>exists('idxFV_IPEVT_ID',EvtId) OR exists('idxFV_REPO_PAYMENT_PROFILE_ID',EvtId)</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_IPEVT_ID',EvtId) OR exists('idxFV_REPO_PAYMENT_PROFILE_ID',EvtId)</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>exists('idxFV_IPEVT_ID',EvtId) OR exists('idxFV_REPO_PAYMENT_PROFILE_ID',EvtId)</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_CA_CONF</Type>
+				<Name>FV_CA_CONF</Name>
+				<ReqType>FV_CA_CONF</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>PayerCd=V_PARTIC OR BenmCd=V_PARTIC OR ReagCd=V_PARTIC OR DeagCd=V_PARTIC OR Sender=V_PARTIC OR exists('idxFV_IALL_ISSUER',ICd,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA',CSaccCd,V_PARTIC) OR exists('idxFV_SSA',DSaccCd,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_IFXCUR</Type>
+				<Name>FV_IFXCUR</Name>
+				<ReqType>FV_IFXCUR</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_BID</Type>
+				<Name>FV_BID</Name>
+				<ReqType>FV_BID</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_MARKETPRICE</Type>
+				<Name>FV_MARKETPRICE</Name>
+				<ReqType>FV_MARKETPRICE</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_EXTCAEXCHANGE</Type>
+				<Name>FV_EXTCAEXCHANGE</Name>
+				<ReqType>FV_EXTCAEXCHANGE</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_EXTCAEXCHANGEAMOUNT</Type>
+				<Name>FV_EXTCAEXCHANGEAMOUNT</Name>
+				<ReqType>FV_EXTCAEXCHANGEAMOUNT</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>ParticicpantCode=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA',SubAccCode,V_PARTIC) OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,ParticicpantCode,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>ParticicpantCode=V_PARTIC OR exists('idxFV_SSA',SubAccCode,V_PARTIC) OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,ParticicpantCode,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_EXTCAEXCHANGEAMOUNTCOLL</Type>
+				<Name>FV_EXTCAEXCHANGEAMOUNTCOLL</Name>
+				<ReqType>FV_EXTCAEXCHANGEAMOUNTCOLL</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>exists('idxFV_SACC',SACode,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA',SACode,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>exists('idxFV_SACC',SACode,V_PARTIC) OR exists('idxFV_SSA',SACode,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_ICUTOFF_LIST</Type>
+				<Name>FV_ICUTOFF_LIST</Name>
+				<ReqType>FV_ICUTOFF_LIST</ReqType>
+				<Index name="idxFV_ICUTOFF_LIST_ISSUER">ID;IPCd</Index> 
+			</View>
+
+			<View>
+				<Type>FV_ICOL_PARTICS</Type>
+				<Name>FV_ICOL_PARTICS</Name>
+				<ReqType>FV_ICOL_PARTICS</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>BoCd=V_PARTIC OR exists('idxFV_ICUTOFF_LIST_ISSUER',ColId,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,BoCd,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,BoCd,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>BoCd=V_PARTIC OR exists('idxFV_ICUTOFF_LIST_ISSUER',ColId,V_PARTIC) OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,BoCd,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+			
+			<View>
+				<Type>FV_ICOL_PARTIC_SSA</Type>
+				<Name>FV_ICOL_PARTIC_SSA</Name>
+				<ReqType>FV_ICOL_PARTIC_SSA</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_MDIVS_LIST</Type>
+				<Name>FV_MDIVS_LIST</Name>
+				<ReqType>FV_MDIVS_LIST</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Recv=V_PARTIC OR exists('idxFV_ICUTOFF_LIST_ISSUER',_ColId,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Recv,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,payeCd,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Recv,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,payeCd,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Recv=V_PARTIC OR exists('idxFV_ICUTOFF_LIST_ISSUER',_ColId,V_PARTIC) OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Recv,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,payeCd,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_FPGPINFO</Type>
+				<Name>FV_FPGPINFO</Name>
+				<ReqType>FV_FPGPINFO</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_ITRANCHE</Type>
+				<Name>FV_ITRANCHE</Name>
+				<ReqType>FV_ITRANCHE</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_QUOTE_ORDER</Type>
+				<Name>FV_QUOTE_ORDER</Name>
+				<ReqType>FV_QUOTE_ORDER</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_OFFER_ORDER</Type>
+				<Name>FV_OFFER_ORDER</Name>
+				<ReqType>FV_OFFER_ORDER</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_TRADE_ORDER</Type>
+				<Name>FV_TRADE_ORDER</Name>
+				<ReqType>FV_TRADE_ORDER</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_SACCOUNTING</Type>
+				<Name>FV_SACCOUNTING</Name>
+				<ReqType>FV_SACCOUNTING</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>exists('idxFV_USER_Partic',UID,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_USER_Partic',UID,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>exists('idxFV_USER_Partic',UID,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_EXTTRAN</Type>
+				<Name>FV_EXTTRAN</Name>
+				<ReqType>FV_EXTTRAN</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_EXTTRADESUMMARY</Type>
+				<Name>FV_EXTTRADESUMMARY</Name>
+				<ReqType>FV_EXTTRADESUMMARY</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_COLLATERAL_POOL</Type>
+				<Name>FV_COLLATERAL_POOL</Name>
+				<ReqType>FV_COLLATERAL_POOL</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>ParticCode=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA',SAccCode,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>ParticCode=V_PARTIC OR exists('idxFV_SSA',SAccCode,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_COLLATERAL</Type>
+				<Name>FV_COLLATERAL</Name>
+				<ReqType>FV_COLLATERAL</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>GiverPartCode=V_PARTIC OR TakerPartCode=V_PARTIC OR Partic=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,GiverPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,TakerPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,GiverPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,TakerPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>GiverPartCode=V_PARTIC OR TakerPartCode=V_PARTIC OR Partic=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,GiverPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,TakerPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_COLLATERAL_MARGIN_CALLS</Type>
+				<Name>FV_COLLATERAL_MARGIN_CALLS</Name>
+				<ReqType>FV_COLLATERAL_MARGIN_CALLS</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>GiverPartCode=V_PARTIC OR TakerPartCode=V_PARTIC OR CollMsgSender=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,GiverPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,TakerPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,CollMsgSender,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,GiverPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,TakerPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,CollMsgSender,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>GiverPartCode=V_PARTIC OR TakerPartCode=V_PARTIC OR Partic=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,GiverPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,TakerPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,CollMsgSender,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_COLLATERAL_SECURITY</Type>
+				<Name>FV_COLLATERAL_SECURITY</Name>
+				<ReqType>FV_COLLATERAL_SECURITY</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>GiverPartCode=V_PARTIC OR TakerPartCode=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,GiverPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,TakerPartCode,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,GiverPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,TakerPartCode,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>GiverPartCode=V_PARTIC OR TakerPartCode=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,GiverPartCode,'DEPO') OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,TakerPartCode,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>
+				<Type>FV_DVP3_BALANCE</Type>
+				<Name>FV_DVP3_BALANCE</Name>
+				<ReqType>FV_DVP3_BALANCE</ReqType>
+			</View>
+
+			<View>
+				<Type>FV_MRKT_RT</Type>
+				<Name>FV_MRKT_RT</Name>
+				<ReqType>FV_MRKT_RT</ReqType>
+			</View>
+			<View>
+				<Type>FV_TAX_PROCEED</Type>
+				<Name>FV_TAX_PROCEED</Name>
+				<ReqType>FV_TAX_PROCEED</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Agent=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Agent,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Agent,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Agent=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Agent,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+			<View>
+				<Type>FV_TAX_PROCEED_DETAIL</Type>
+				<Name>FV_TAX_PROCEED_DETAIL</Name>
+				<ReqType>FV_TAX_PROCEED_DETAIL</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Partic=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Partic=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+			<View>
+				<Type>FV_RPT_STORAGE</Type>
+				<Name>FV_RPT_STORAGE</Name>
+				<ReqType>FV_RPT_STORAGE</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Partic=V_PARTIC</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO') OR V_PARTIC='CMACRWRW'</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Partic=V_PARTIC OR exists('idxFV_SSA_Partic_SAccOwner',V_PARTIC,Partic,'DEPO')</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+
+			<View>	
+				<Type>FV_WAP</Type>
+				<Name>FV_WAP</Name>
+				<ReqType>FV_WAP</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>ParticCode=V_PARTIC</FilterByCondition>
+				<!--FilterByCondition ownership='MANAGED'>exists('idxFV_SSA',SAccCode,V_PARTIC)</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>ParticCode=V_PARTIC OR exists('idxFV_SSA',SAccCode,V_PARTIC)</FilterByCondition-->
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+			</View>
+			<View>	
+				<Type>FV_REPO_PAYMENT_PROFILE</Type>
+				<Name>FV_REPO_PAYMENT_PROFILE</Name>
+				<ReqType>FV_REPO_PAYMENT_PROFILE</ReqType>
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>TRUE</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>TRUE</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>TRUE</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+				<Index name="idxFV_REPO_PAYMENT_PROFILE_ID">ID</Index>
+			</View>
+			<View>
+				<Type>FV_RPT_REPORT_TYPE</Type>
+				<Name>FV_RPT_REPORT_TYPE</Name>
+				<ReqType>FV_RPT_REPORT_TYPE</ReqType>
+				<!--FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>Code='F_RP_REGISTRATION'</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>Code='F_RP_REGISTRATION'</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>Code='F_BRP_STATEMENT_ACC'</FilterByCondition>
+				<FilterByCondition ownership='HIERARCHY'>Code='F_BRP_STATEMENT_ACC' OR Code='F_RP_RSE_SETTL_INI' OR Code='F_RP_RSE_SETTL_FIN' OR Code='F_RP_ACC_STATEMENT_TB' OR Code='F_RP_REGISTRATION' OR Code='F_RP_RSE_SETTL_UNS'</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition-->
+				<FilterByCondition ownership='NONE'>FALSE</FilterByCondition>
+				<FilterByCondition ownership='OWN'>checkGS(V_SID,'FVRT','1',Code)</FilterByCondition>
+				<FilterByCondition ownership='MANAGED'>checkGS(V_SID,'FVRT','2',Code)</FilterByCondition>
+				<FilterByCondition ownership='SERVICED'>checkGS(V_SID,'FVRT','3',Code)</FilterByCondition>
+				<FilterByCondition ownership='ALL'>TRUE</FilterByCondition>
+                                                                                                                                               
+			</View>
+			<View>
+				<Type>FV_DOC_TYPE_TTC</Type>
+				<Name>FV_DOC_TYPE_TTC</Name>
+				<ReqType>FV_DOC_TYPE_TTC</ReqType>
+			</View>
+			<View>
+				<Type>FV_DOC_TYPE_TTC_CAT</Type>
+				<Name>FV_DOC_TYPE_TTC_CAT</Name>
+				<ReqType>FV_DOC_TYPE_TTC_CAT</ReqType>
+			</View>
+			<View>
+				<Type>FV_DOC_TYPE_TTC_CAT_LINK</Type>
+				<Name>FV_DOC_TYPE_TTC_CAT_LINK</Name>
+				<ReqType>FV_DOC_TYPE_TTC_CAT_LINK</ReqType>
+			</View>
+		</Views>
+		<Transactions>
+		<Trans> 
+  		 <Type>DEPO.NGetView</Type> 
+  		 <GWType>GetView</GWType> 
+  		 <ExtType>DEPO.NGetView</ExtType> 
+		</Trans>
+			<Trans>
+				<Type>DEPO.SWIFT.RSC</Type>
+				<GWType>RSC</GWType>
+				<ExtType>DEPO.SWIFT.RSC</ExtType>
+			</Trans>
+			<Trans>
+				<Type>DEPO.SWIFT.ACK</Type>
+				<GWType>RSC_ACK</GWType>
+				<ExtType>DEPO.SWIFT.ACK</ExtType>
+			</Trans>
+			<Trans>
+				<Type>DEPO.SWIFT.NAK</Type>
+				<GWType>RSC_NAK</GWType>
+				<ExtType>DEPO.SWIFT.NAK</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+								
+								   
+									  
+		   
+					  
+				<Type>NBDCreateOperday</Type>
+				<GWType>FORWARD</GWType>
+				<ExtType>NBDCreateOperday</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+								  
+								
+										
+			  
+					  
+				<Type>NBDOpenOperday</Type>
+				<GWType>FORWARD</GWType>
+				<ExtType>NBDOpenOperday</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+				<Type>NBDSuspendOperday</Type>
+				<GWType>FORWARD</GWType>
+				<ExtType>NBDSuspendOperday</ExtType>
+			</Trans>			
+			<Trans signOff="Y">
+				<Type>NBDCloseOperday</Type>
+				<GWType>FORWARD</GWType>
+				<ExtType>NBDCloseOperday</ExtType>
+			</Trans>			
+			<Trans signOff="Y">
+				<Type>NBDActivatePeriod</Type>
+				<GWType>FORWARD</GWType>
+				<ExtType>NBDActivatePeriod</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+				<Type>NBDAddPeriod</Type>
+				<GWType>FORWARD</GWType>
+				<ExtType>NBDAddPeriod</ExtType>
+			</Trans>			
+			<Trans signOff="Y">
+							   
+							
+									 
+		   
+					  
+				<Type>NBDModifyPeriod</Type>
+				<GWType>FORWARD</GWType>
+				<ExtType>NBDModifyPeriod</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+				<Type>NBDDeletePeriod</Type>
+				<GWType>FORWARD</GWType>
+				<ExtType>NBDDeletePeriod</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+				<Type>NBDClosePeriod</Type>
+				<GWType>FORWARD</GWType>
+				<ExtType>NBDClosePeriod</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+				<Type>NScheduleReport</Type>
+				<GWType>FORWARD</GWType>
+				<ExtType>NScheduleReport</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+				<Type>NGetView</Type>
+				<GWType>GetView</GWType>
+				<ExtType>NGetView</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+				<Type>NSetEvent</Type>
+				<GWType>SetEvent</GWType>
+				<ExtType>NSetEvent</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+				<Type>NParticCollProfile</Type>
+				<GWType>FORWARD</GWType>
+				<ExtType>NParticCollProfile</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+				<Type>NParticCollProfileDel</Type>
+				<GWType>FORWARD</GWType>
+				<ExtType>NParticCollProfileDel</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+				<Type>DEPO.PWD.CHANGE</Type>
+				<GWType>ChangePassword</GWType>
+				<ExtType>DEPO.PWD.CHANGE</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+				<Type>NChangePassword</Type>
+				<GWType>ChangePassword</GWType>
+				<ExtType>ChangePassword</ExtType>
+			</Trans>
+			<Trans signOff="Y">
+				<Type>NGetFunction</Type>
+				<GWType>Handle</GWType>
+				<ExtType>NGetFunction</ExtType>
+				</Trans>
+			<Trans signOff="Y">
+				<Type>NGetFunctionDST</Type>
+				<GWType>Handle</GWType>
+				<ExtType>NGetFunctionDST</ExtType>
+			</Trans>
+		</Transactions>
+	</ConnectionData>
+</SSYSGw>
